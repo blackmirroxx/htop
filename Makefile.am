@@ -267,6 +267,24 @@ zfs/ZfsArcMeter.c zfs/ZfsCompressedArcMeter.c
 myhtopplatheaders = $(solaris_platform_headers)
 endif
 
+# WinNT
+# -----
+
+winnt_platform_headers = \
+	winnt/Platform.h \
+	winnt/ProcessField.h \
+	winnt/WinNTProcess.h \
+	winnt/WinNTProcessList.h
+
+if HTOP_WINNT
+myhtopplatsources = \
+	winnt/Platform.c \
+	winnt/WinNTProcess.c \
+	winnt/WinNTProcessList.c
+
+myhtopplatheaders = $(winnt_platform_headers)
+endif
+
 # Unsupported
 # -----------
 
